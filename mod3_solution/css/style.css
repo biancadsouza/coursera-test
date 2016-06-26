@@ -1,0 +1,47 @@
+body {
+  font-size: 16px;
+  color: #fff;
+  background-color: #FF6347;
+  font-family: 'Slabo 27px', serif;
+}
+#header-nav {
+  background-color: #DC143C;
+  border-radius: 0;
+  border: 0;
+}
+.navbar-brand h1 { /* Company name */ 
+  margin-top: -10px; 
+  color:black;
+}
+.navbar-brand a:hover, .navbar-brand a:focus {
+  text-decoration: none;
+}
+
+#nav-list li a{
+	color:black;
+	text-align:center;
+}
+
+#nav-list li a:hover{
+	background: #E7E7E7;
+}
+.navbar-header button.navbar-toggle, .navbar-header .icon-bar {
+  border: 1px solid #FF6347;
+}
+.navbar-header button.navbar-toggle {
+  clear: both;
+  margin-top: -30px;
+}
+.outside{
+	position:relative;
+	background-color:#FFA500;
+	border:2px dashed black;
+	margin-top:15px;
+	padding:10px;
+}
+.title{
+	font-size:1.2em;
+}
+.row{
+	margin-bottom:15px;
+}
