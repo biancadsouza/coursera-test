@@ -111,7 +111,7 @@ function buildAndShowHomeHTML (categories) {
      
           //var categoriesViewHtml =
           //chooseRandomCategory(categories);
-          	 var chosenCategoryShortName = chooseRandomCategory(categories).short_name;
+          	 var chosenCategoryShortName = chooseRandomCategory(categories);
           	 
          
 
@@ -130,8 +130,8 @@ function buildAndShowHomeHTML (categories) {
       // it into the home html snippet.
       // 
       // var homeHtmlToInsertIntoMainPage = ....
-      		var homeHtmlToInsertIntoMainPage = insertProperty(homeHtmlUrl,"randomCategoryShortName",chosenCategoryShortName);
-      
+      		//var homeHtmlToInsertIntoMainPage = insertProperty(homeHtmlUrl,"randomCategoryShortName",chosenCategoryShortName);
+      var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml, "randomCategoryShortName", "'" + chosenCategoryShortName["short_name"] + "'" );
 
 
       //var homeHtmlToInsertIntoMainPage = insertProperty(categories,"randomCategoryShortName",categoriesViewHtml);-------------------
@@ -154,7 +154,7 @@ function buildAndShowHomeHTML (categories) {
       // ....
       //insertHtml("main-content",);------------------------------------------------------------------
 
-      insertHtml("main-content",homeHtmlToInsertIntoMainPage);
+      insertHtml("#main-content",homeHtmlToInsertIntoMainPage);
 
     },
     false); // False here because we are getting just regular HTML from the server, so no need to process JSON.
