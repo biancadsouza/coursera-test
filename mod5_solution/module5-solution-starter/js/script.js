@@ -102,16 +102,17 @@ function buildAndShowHomeHTML (categories) {
   // Load home snippet page
   $ajaxUtils.sendGetRequest(
     homeHtmlUrl,
-    function (homeHtmlUrl) {
+    function (homeHtml) {
 
       // TODO: STEP 2: Here, call chooseRandomCategory, passing it retrieved 'categories'
       // Pay attention to what type of data that function returns vs what the chosenCategoryShortName
       // variable's name implies it expects.
       // var chosenCategoryShortName = ....
      
-          var categoriesViewHtml =
-          chooseRandomCategory(categories);
-          
+          //var categoriesViewHtml =
+          //chooseRandomCategory(categories);
+          	 var chosenCategoryShortName = chooseRandomCategory(categories).short_name;
+          	 
          
 
 
@@ -129,9 +130,11 @@ function buildAndShowHomeHTML (categories) {
       // it into the home html snippet.
       // 
       // var homeHtmlToInsertIntoMainPage = ....
+      		var homeHtmlToInsertIntoMainPage = insertProperty(homeHtmlUrl,"randomCategoryShortName",chosenCategoryShortName);
+      
 
 
-      var homeHtmlToInsertIntoMainPage = insertProperty(categories,"randomCategoryShortName",categoriesViewHtml);-------------------
+      //var homeHtmlToInsertIntoMainPage = insertProperty(categories,"randomCategoryShortName",categoriesViewHtml);-------------------
       //---------------------------------------
       //delete this later
       //$ajaxUtils.sendGetRequest(
@@ -151,7 +154,7 @@ function buildAndShowHomeHTML (categories) {
       // ....
       //insertHtml("main-content",);------------------------------------------------------------------
 
-      insertHtml("main-content", homeHtmlToInsertIntoMainPage);
+      insertHtml("main-content",homeHtmlToInsertIntoMainPage);
 
     },
     false); // False here because we are getting just regular HTML from the server, so no need to process JSON.
